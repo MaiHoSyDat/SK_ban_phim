@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="Ready">
+<img id="doraemon" src="https://anhdep123.com/wp-content/uploads/2021/01/hinh-anh-doremon-ngau-nhat.png"
+     width="250" height="200" STYLE="position: relative">
+</body>
+</html>
+<script>
+    let px = 0;
+    let py = 0;
+
+  function turnup(){
+      let move = document.getElementById("doraemon");
+      py -= 10
+      move.style.top = py + "px";
+
+  }
+  function turndown(){
+      let move = document.getElementById("doraemon");
+      py += 10
+      move.style.top = py + "px";
+  }
+  function turnleft(){
+      let move = document.getElementById("doraemon");
+      px -= 10
+      move.style.left = px + "px";
+  }
+  function turnright(){
+      let move = document.getElementById("doraemon");
+      px += 10
+      move.style.left = px + "px";
+  }
+
+  function moveStar(evt) {
+      switch (evt.keyCode) {
+          case 37:
+              turnleft();
+              break;
+          case 39:
+              turnright()
+              break;
+          case 38:
+              turnup()
+              break;
+          case 40:
+              turndown()
+              break;
+      }
+  }
+  function Ready() {
+    window.addEventListener("keydown", moveStar)
+  }
+  Ready();
+</script>
